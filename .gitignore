@@ -1,0 +1,49 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Game install and native binaries
+*.app/
+*.dll
+*.dll.*
+*.disabled
+*.exe
+*.dylib
+*.so
+*.bundle
+*.pdb
+*.mdb
+
+# Unity / asset binaries
+*.assets
+*.ress
+*.resS
+*.resource
+*.bank
+*.dat
+*.db
+
+# Bundled .NET runtime and generated interop
+/dotnet/
+/BepInEx/core/
+/BepInEx/unity-libs/
+/BepInEx/interop/
+/BepInEx/interop.bak-*/
+/BepInEx/cache/
+/BepInEx/patchers/
+
+# Logs
+*.log
+/BepInEx/LogOutput.log
+/BepInEx/ErrorLog.log
+/BepInEx/native-launch.log
+
+# Build output
+bin/
+obj/
+.vs/
+*.user
+
+# Local clone used only to compile DirectConnect
+/mods-src/
