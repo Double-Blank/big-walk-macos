@@ -3,41 +3,27 @@
 .AppleDouble
 .LSOverride
 
-# Game install and native binaries
+# The Steam game itself. Never publish this.
 *.app/
-*.dll
-*.dll.*
+*.app
+
+# Logs and disposable caches
+*.log
+/BepInEx/cache/
+/BepInEx/interop.bak-*/
+/BepInEx/unity-libs/
+/BepInEx/patchers/
+
+# Local backups and diagnostics that are not part of the player pack
 *.disabled
-*.exe
-*.dylib
-*.so
-*.bundle
+*.dll.*
+!/BepInEx/core/*.dll.config
+*.orig-*
 *.pdb
 *.mdb
 
-# Unity / asset binaries
-*.assets
-*.ress
-*.resS
-*.resource
-*.bank
-*.dat
-*.db
-
-# Bundled .NET runtime and generated interop
-/dotnet/
-/BepInEx/core/
-/BepInEx/unity-libs/
-/BepInEx/interop/
-/BepInEx/interop.bak-*/
-/BepInEx/cache/
-/BepInEx/patchers/
-
-# Logs
-*.log
-/BepInEx/LogOutput.log
-/BepInEx/ErrorLog.log
-/BepInEx/native-launch.log
+# Source checkout used to compile the plugin. It is its own git repo.
+/mods-src/
 
 # Build output
 bin/
@@ -45,5 +31,13 @@ obj/
 .vs/
 *.user
 
-# Local clone used only to compile DirectConnect
-/mods-src/
+# Unity game assets (the Data entry in this repo is only a symlink)
+*.assets
+*.ress
+*.resS
+*.resource
+*.bank
+*.dat
+*.exe
+*.so
+*.bundle
