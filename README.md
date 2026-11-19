@@ -78,11 +78,14 @@ Steam 库在默认位置时：
 GAME="$HOME/Library/Application Support/Steam/steamapps/common/Big Walk"
 cd "$GAME"
 
+# 1. 清除模组与运行时的 macOS 隔离属性
+xattr -dr com.apple.quarantine BepInEx dotnet libdoorstop.dylib run_bepinex.sh
+
+# 2. 修复符号链接并赋予脚本执行权限
 if [ -e Data ] && [ ! -L Data ]; then
   echo "Data 已经是真实文件夹，不要删除。确认这是游戏根目录后再继续。"
   exit 1
 fi
-
 rm -f Data GameAssembly.dylib
 ln -s "Big Walk.app/Contents/Resources/Data" Data
 ln -s "Big Walk.app/Contents/Frameworks/GameAssembly.dylib" GameAssembly.dylib
